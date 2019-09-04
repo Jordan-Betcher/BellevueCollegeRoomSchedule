@@ -1,0 +1,5 @@
+{
+	"BuildingLetter":"L",
+	"RoomNumber":"219",
+	"Day":"Monday"
+}

@@ -1,0 +1,56 @@
+Bellevue College Room Finder
+
+Room Schedule Website
+
+Create
+	Website
+		Index
+			html
+				tab name
+				title
+				navigation bar
+					home
+						-> Index
+				Search room info
+					text area building + roomnumber
+					dropdown day
+						default to Monday
+					button search
+						-> javascript search(building+roomnumber,day)
+				table info placeholder
+				table placeholder
+				footer ?
+			javascript
+				search(building+roomnumber,day)
+					parse building+roomnumber
+					get json from api(building,roomnumber,day)
+					convert json
+					create table
+						start time: 730
+						endtime: 2330 (from 2320)
+						increments: 30 min
+					populate table
+					populate info
+
+Create Requires
+	Tool to program html
+	Tool to program javascript
+		Visual studio code?
+	Upload to S3
+	Host website from S3
+	Create Form html
+	Create table javascript
+
+TODO later
+	Pages
+		Report Bug
+		About
+		Monitary strat
+
+Useful
+	Visual Studio Code Extensions
+		https://youtu.be/fnPhJHN0jTE?t=1294
+
+
+	
+			

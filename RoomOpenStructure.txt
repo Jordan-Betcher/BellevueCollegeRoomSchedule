@@ -1,0 +1,28 @@
+Is Room Open
+
+Education Login
+https://www.awseducate.com/signin/SiteLogin
+
+Takes in a:
+	building day room before/after time
+	
+	Defaults:
+	BuildingLetter = n/a
+	Room = all rooms in building
+	Day = today
+	AfterBefore = after
+	Time = now
+	
+Is timeEnd needed?	
+	
+API that get's these
+	API -> Lambda -> Searches Database -> Returns List of rooms around that time
+
+Need:
+	[Cloudwatch event] Update Database Function (check every day)
+	[S3 static website hosting]Website
+	Phone App that accesses
+	
+
+
+

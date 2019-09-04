@@ -1,0 +1,47 @@
+Bellevue College Room Finder
+
+Bellevue College Room Finder API Gateway
+Create
+	API Gateway Connected to Lambda
+	Lambda
+		Take in json string input
+		Figure out which vars in json string 
+			BuildingLetter RoomNumber Day AfterBefore Time
+			defaults
+				BuildingLetter = n/a
+				RoomNumber = all rooms in building
+				Day = today
+				AfterBefore = after
+				Time = time of request
+		Scan Database for classTimes that match criteria
+		return json string of list of classTimes
+		
+Create Requires
+	[x] Create a new API Gateway
+	[x] Create a get Request with optional paramters
+			https://youtu.be/uqx9iVyvIxw?t=217
+	[x] Connect API Gateway to lambda
+			Go to API Gateway and select the lambda you want
+	[x] Receive Input from api gateway in lambda
+			https://aws.amazon.com/blogs/compute/developing-net-core-aws-lambda-functions/
+			//Function structured like this: "public APIGatewayProxyResponse FunctionHandler //(APIGatewayProxyRequest request, ILambdaContext context)"
+			
+			Played around and got something like this "public APIGatewayProxyResponse FunctionHandler(JObject request, ILambdaContext context)"
+			Install Nuget "Amazon.Lambda.APIGatewayEvents"
+	[x] Take json as input to lambda
+			Put a string paramater at the start of the called lambda function
+	[x] Scan Database for multiple criteria at once
+			Add more in filter experssions when creating the ScanRequest
+	[x]	Get items from Database
+			https://youtu.be/jR-VU3hDH0A?t=766
+			Use the scanRESPONSE and get the items, the item variables is stored in a Dictionary<string, AttributeValue>
+	[x] Create json string from list of objects
+			https://stackoverflow.com/questions/9110724/serializing-a-list-to-json
+			"""
+			using Newtonsoft.Json;
+			var json = JsonConvert.SerializeObject(aList);
+			"""
+Bugs
+	Lambda BCParams Default time is off
+
+

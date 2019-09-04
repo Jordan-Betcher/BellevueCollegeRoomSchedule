@@ -1,0 +1,1 @@
+id - classCode - building - roomNumber - day - startTime - endTime

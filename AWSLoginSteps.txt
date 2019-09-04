@@ -1,0 +1,5 @@
+1. AWS Site Login https://console.aws.amazon.com/console/home?region=us-east-1
+
+2. Credentials into "C:\Users\Porcupine\.aws"
+
+3. Bucket Name https://www.guidgenerator.com/online-guid-generator.aspx

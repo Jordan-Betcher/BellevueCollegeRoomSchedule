@@ -1,0 +1,7 @@
+{
+	"BuildingLetter" : "$input.params('BuildingLetter')",
+	"Room" : "$input.params('Room')",
+	"Day" : "$input.params('Day')",
+	"AfterBefore" : "$input.params('AfterBefore')",
+	"Time" : "$input.params('Time')"
+}

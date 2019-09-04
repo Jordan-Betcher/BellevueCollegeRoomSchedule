@@ -1,0 +1,39 @@
+Bellevue College Room Finder
+
+Auto Update Database
+Create
+	Event 
+		calls lambda once a day
+	Lambda
+		BC API Retrives current Quarter
+		If DynamoDB contains current quarter
+			Nothing happends
+		Else
+			Empty Table
+				Delete dynamodb table
+				Make dynamodb table
+			Retrive and store classtimes
+				API Retrive [...] all classtimes
+				Convert classtimes into DynamoDB storagables
+				DynamoDB store classtimes
+			DynamoDB store current Quarter
+Create Requires
+	[x] Create a cloudwatch event that call lambda once a day
+			From youtube cloudwatch video
+	[x] Create a lambda function
+			From class
+	[x] Retrive info from API in Lambda
+			From previous BCRoom project
+	[x] Check if item in dynamodb in Lambda
+			https://www.youtube.com/watch?v=jR-VU3hDH0A&list=PLzoe6wiIwq3781gOtoXpYRBpHfxAGO7F7&index=3
+				only pay attention to the dynamodb portion not the creating an api from scratch,
+				mainly just I used just the request and combined it with the dynamodb module
+	[x] Delete Table in Lambda
+			Just use a table delete request
+	[x] Create Table in Lambda
+			https://www.youtube.com/watch?v=o3dZCM9i0Ss&list=PLzoe6wiIwq3781gOtoXpYRBpHfxAGO7F7&index=1
+			Table create request
+	[x] Add Item to DynamoDB in Lambda
+			https://www.youtube.com/watch?v=FNUBBsmV6Co&list=PLzoe6wiIwq3781gOtoXpYRBpHfxAGO7F7&index=2
+			Add Item Request
+	[x] Wait for table to be finished deleting / creating
