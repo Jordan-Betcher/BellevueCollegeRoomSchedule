@@ -46,6 +46,7 @@ Create Requires
 [x]	Javascript, Get info from html
 [x]	Javascript, Parse String
 []	Javascript, Get info from API
+	[]	Allow permission to api
 []	Javascript, Parse API
 []	Javascript, Create Table
 [x]	Upload to S3
