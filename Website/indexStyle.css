@@ -17,3 +17,8 @@ form
 {
     text-align: left
 }
+
+#divError
+{
+    color: red
+}

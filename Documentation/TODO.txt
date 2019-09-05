@@ -33,13 +33,26 @@ Create
 					populate info
 
 Create Requires
-	Tool to program html
-	Tool to program javascript
-		Visual studio code?
-	Upload to S3
-	Host website from S3
-	Create Form html
-	Create table javascript
+[x]	Tool to program html
+		Visual studio code
+[x]	Tool to program javascript
+		Visual studio code
+[x]	HTML create webpage
+		Normal HTML
+[x]	HTML Connect to CSS
+		Use link tag with the relative path to your CSS file. 
+[x]	HTML Connect to Javascript
+		Use script tag with the relative path to your Javascript file. 
+[x]	Javascript, Get info from html
+[x]	Javascript, Parse String
+[]	Javascript, Get info from API
+[]	Javascript, Parse API
+[]	Javascript, Create Table
+[x]	Upload to S3
+		Drag and drop into S3... (why is this even here?)
+[x]	Host website from S3
+		Go to the S3's properties and enable static hosting
+[]	Publish website
 
 TODO later
 	Pages
