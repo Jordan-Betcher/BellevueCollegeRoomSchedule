@@ -4,7 +4,7 @@ function search()
 {
     event.preventDefault();
 
-    let room = document.forms["searchForm"]["room"].value.toLowerCase();
+    let room = document.forms["searchForm"]["room"].value.toUpperCase();
     let day = document.forms["searchForm"]["day"].value;
 
     let divError = document.getElementById("divError");
@@ -20,20 +20,31 @@ function search()
     let roomNumber = room.substring(1, 4);
 
     //https://67gi99ndv2.execute-api.us-west-2.amazonaws.com/Publish/room?BuildingLetter=L&RoomNumber=219&Day=Monday
-    let api = `https://67gi99ndv2.execute-api.us-west-2.amazonaws.com/Publish/room`
-    + `?BuildingLetter=${building}`
-    + `&RoomNumber=${roomNumber}`
-    + `&Day=${day}`;
+    let api = "";
+    api += `https://67gi99ndv2.execute-api.us-west-2.amazonaws.com/Publish/room`;
+    api += `?BuildingLetter=${building}`;
+    api += `&RoomNumber=${roomNumber}`;
+    api += `&Day=${day}`;
 
     console.log("fetching");
+    console.log(api);
     fetch(api)
-        .then(function(res)
-        {
-            console.log(res);
-        });
+        .then
+        (
+            function(response) 
+            {
+                return response.json();
+            }
+        )
+        .then
+        (
+            function(myJson) 
+            {
+                console.log(JSON.stringify(myJson));
+            }
+        );
     console.log("done fetching");
 
-    console.log(api);
 
     console.log(building);
     console.log(roomNumber);

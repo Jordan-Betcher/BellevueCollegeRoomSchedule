@@ -19,7 +19,8 @@ namespace AWSLambdaBCRoomFinder
 {
     public class Function
     {
-        public async Task<APIGatewayProxyResponse> FunctionHandler(JObject request, ILambdaContext context)
+        //public async Task<APIGatewayProxyResponse> FunctionHandler(JObject request, ILambdaContext context)
+        public async Task<List<Classtime>> FunctionHandler(JObject request, ILambdaContext context)
         {
             String buildingLetter = (String)request["BuildingLetter"];
             String roomNumber = (String)request["RoomNumber"];
@@ -29,7 +30,16 @@ namespace AWSLambdaBCRoomFinder
             TableHandlerRoomFinder tableHandler = new TableHandlerRoomFinder();
             List<Classtime> classtimes = await tableHandler.ScanForRooms(bcSearchParams);
 
-            return CreateResponse(classtimes);
+            //Dictionary<String, object> headers = new Dictionary<string, object>();
+            //headers.Add("Access-Control-Allow-Origin", "*");
+
+            //Dictionary<String, object> response = new Dictionary<string, object>();
+            //response.Add("statusCode", 200);
+            //response.Add("headers", headers);
+            //response.Add("body", classtimes);
+
+            return classtimes;
+            //return CreateResponse(classtimes);
         }
 
         APIGatewayProxyResponse CreateResponse(object result)

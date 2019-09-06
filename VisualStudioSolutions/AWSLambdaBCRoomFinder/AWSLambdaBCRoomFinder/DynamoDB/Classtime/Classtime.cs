@@ -6,11 +6,11 @@ namespace AWSLambdaDynamoDB.DynamoDB
 {
     public class Classtime
     {
-        public string id { get; set; }
-        public string classCode { get; set; }
-        public string building { get; set; }
-        public string roomNumber { get; set; }
-        public string day { get; set; }
+        public String id { get; set; }
+        public String classCode { get; set; }
+        public String building { get; set; }
+        public String roomNumber { get; set; }
+        public String day { get; set; }
         public int startTime { get; set; }
         public int endTime { get; set; }
     }
