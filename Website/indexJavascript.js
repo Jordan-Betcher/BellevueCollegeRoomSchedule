@@ -26,6 +26,7 @@ function search()
     api += `&RoomNumber=${roomNumber}`;
     api += `&Day=${day}`;
 
+
     console.log("fetching");
     console.log(api);
     fetch(api)
@@ -38,11 +39,11 @@ function search()
         )
         .then
         (
-            function(myJson) 
+            function(json)
             {
-                console.log(JSON.stringify(myJson));
+                createClasstimeTable(json);
             }
-        );
+        )
     console.log("done fetching");
 
 
@@ -50,4 +51,82 @@ function search()
     console.log(roomNumber);
     console.log(room);
     console.log(day);
+}
+
+const increments = 30;
+const minTime = 700;
+const maxTime = 2400;
+
+function createClasstimeTable(classTimeJSON)
+{
+    console.log("Creating Table");
+    console.log(classTimeJSON);
+    let classTimes = classTimeJSON.sort
+    (
+        function(a, b){return a["startTime"]-b["startTime"]}
+    )
+
+    let tableSchedule = document.getElementById("tableSchedule");
+
+    tableSchedule.innerHTML = 
+    `
+        <tr>
+            <th>Class</th>
+            <th>Time</th>
+        </tr>
+    `
+
+    let time = minTime;
+    while ( time < maxTime) 
+    {
+        let classTime = classTimes.find(function(element) { 
+            return time >= element["startTime"] && time <= element["endTime"]; 
+          });
+        
+        
+        
+        if(classTime == undefined)
+        {
+            tableSchedule.innerHTML += 
+            `
+            <tr>
+                <td></td>
+                <td>${time}</td>
+            </tr>
+            `
+        }
+        else
+        {
+            let classCode = classTime["classCode"];
+            tableSchedule.innerHTML += 
+            `
+            <tr>
+                <td>${classCode}</td>
+                <td>${time}</td>
+            </tr>
+            `
+        }
+
+        time += increments;
+        if(time % 100 >= 60)
+        {
+            time -= time % 100;
+            time += 100;
+        }
+    }
+
+    /*
+    classTimes.forEach(element => {
+        console.log(element["startTime"]);
+        let classCode = element["classCode"];
+        let startTime = element["startTime"];
+
+        tableSchedule.innerHTML += 
+        `
+        <tr>
+            <td>${classCode}</td>
+            <td>${startTime}</td>
+        </tr>
+        `
+    });//*/
 }
