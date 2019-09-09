@@ -12,10 +12,11 @@
     "framework"     : "netcoreapp2.1",
     "function-runtime" : "dotnetcore2.1",
     "function-memory-size" : 512,
-    "function-timeout"     : 15,
+    "function-timeout"     : 300,
     "function-handler"     : "AWSLambdaCheckCurrentQuarter::AWSLambdaCheckCurrentQuarter.Function::CheckCurrentQuarterAsync",
     "function-name"        : "LambdaCheckCurrentQuarter",
     "function-description" : "",
     "tracing-mode"         : "PassThrough",
-    "environment-variables" : ""
+    "environment-variables" : "",
+    "function-role"         : "arn:aws:iam::789124937275:role/service-role/LambdaCheckCurrentQuarter-role-8xdkqsgl"
 }

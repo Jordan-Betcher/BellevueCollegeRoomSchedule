@@ -46,7 +46,7 @@ namespace AWSLambdaDynamoDB.DynamoDB.ClassTime
 
         public Dictionary<string, AttributeValue> GetItemAsAttributes(Classtime classtime)
         {
-
+            /*
             Console.Write("id: {0}", classtime.id);
             Console.Write(", classCode: {0}", classtime.classCode);
             Console.Write(", building: {0}", classtime.building);
@@ -55,6 +55,7 @@ namespace AWSLambdaDynamoDB.DynamoDB.ClassTime
             Console.Write(", startTime: {0}", classtime.startTime);
             Console.Write(", endTime: {0}", classtime.endTime);
             Console.WriteLine();
+            //*/
 
             Dictionary<string, AttributeValue> itemAsAttributes = new Dictionary<string, AttributeValue>()
             {

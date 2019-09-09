@@ -77,7 +77,8 @@ namespace AWSLambdaBCRoomRestfulAPI
                                 index += 1;
                             }
 
-                            Console.WriteLine("\t{0},\t{1},\t{2}", classCode, room, @class.schedule);
+                            //Print class
+                            //Console.WriteLine("\t{0},\t{1},\t{2}", classCode, room, @class.schedule);
                             
                         }
                     }
