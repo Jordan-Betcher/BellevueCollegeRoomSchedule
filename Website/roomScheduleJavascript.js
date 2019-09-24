@@ -85,15 +85,10 @@ function createClasstimeTable(classTimeJSON)
         function(a, b){return a["startTime"]-b["startTime"]}
     )
 
-    let tableSchedule = document.getElementById("tableSchedule");
+    let calendar = document.getElementById("calendar");
 
-    tableSchedule.innerHTML = 
-    `
-        <tr>
-            <th>Class</th>
-            <th>Time</th>
-        </tr>
-    `
+    let newCalendar = "";
+    newCalendar = `<div class="quarterDay">`;
 
     let time = minTime;
     while ( time < maxTime) 
@@ -103,26 +98,29 @@ function createClasstimeTable(classTimeJSON)
           });
         
         
-        
         if(classTime == undefined)
         {
-            tableSchedule.innerHTML += 
+            newCalendar += 
             `
-            <tr>
-                <td></td>
-                <td>${time}</td>
-            </tr>
+            <div class="row">
+                <span class="hour">${time}</span>
+                <span class="hourLine">
+                    <span class="classCode"></span>
+                </span>
+            </div>
             `
         }
         else
         {
             let classCode = classTime["classCode"];
-            tableSchedule.innerHTML += 
+            newCalendar += 
             `
-            <tr>
-                <td>${classCode}</td>
-                <td>${time}</td>
-            </tr>
+            <div class="row">
+                <span class="hour">${time}</span>
+                <span class="hourLine">
+                    <span class="classCode">${classCode}</span>
+                </span>
+            </div>
             `
         }
 
@@ -134,20 +132,8 @@ function createClasstimeTable(classTimeJSON)
         }
     }
 
-    /*
-    classTimes.forEach(element => {
-        console.log(element["startTime"]);
-        let classCode = element["classCode"];
-        let startTime = element["startTime"];
-
-        tableSchedule.innerHTML += 
-        `
-        <tr>
-            <td>${classCode}</td>
-            <td>${startTime}</td>
-        </tr>
-        `
-    });//*/
+    newCalendar += `</div>`;
+    calendar.innerHTML += newCalendar;
 }
 
 function main()

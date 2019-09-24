@@ -1,68 +1,29 @@
 Bellevue College Room Finder
 
 Room Schedule Website
+http://bellevuecollegeroomschedule.s3-website-us-west-2.amazonaws.com/
 
 Create
-	Website
-		Index
-			html
-				tab name
-				title
-				navigation bar
-					home
-						-> Index
-				Search room info
-					text area building + roomnumber
-					dropdown day
-						default to Monday
-					button search
-						-> javascript search(building+roomnumber,day)
-				table info placeholder
-				table placeholder
-				footer ?
-			javascript
-				search(building+roomnumber,day)
-					parse building+roomnumber
-					get json from api(building,roomnumber,day)
-					convert json
-					create table
-						start time: 730
-						endtime: 2330 (from 2320)
-						increments: 30 min
-					populate table
-					populate info
+	Purpose
+		This site's purpose is to allow students to get a feel for room availablity. When I was a student I wanted to know which rooms I could sit in an ~play~ study as I wanted for my next class in 3 hours... I didn't have something that told me if a room is available, but that doesn't mean you can't.
+	Instructions
+		Fill in the room code (i.e. L219) and select the day, to view the classes that are in that room for that day.
+	Warning
+		This site uses the bellevue college's API, misses some class times. This site's api downloads the class times at the start of the quarter so changes after the quarter has been released won't show up.
+	Google like calendar
+		Time
+		Border matching time
+		Class and color
+		Convert from military to normal time (1300 -> 1PM)
+	Works on Mobile / small windows
 
 Create Requires
-[x]	Tool to program html
-		Visual studio code
-[x]	Tool to program javascript
-		Visual studio code
-[x]	HTML create webpage
-		Normal HTML
-[x]	HTML Connect to CSS
-		Use link tag with the relative path to your CSS file. 
-[x]	HTML Connect to Javascript
-		Use script tag with the relative path to your Javascript file. 
-[x]	Javascript, Get info from html
-[x]	Javascript, Parse String
-[x]	Javascript, Get info from API
-[x]	Javascript, Parse API
-[x]	Javascript, Create Table
-[x]	Upload to S3
-		Drag and drop into S3... (why is this even here?)
-[x]	Host website from S3
-		Go to the S3's properties and enable static hosting
-[x]	Publish website
 
 TODO later
 	Pages
 		Report Bug
 		About
 		Monitary strat
-
-Useful
-	Visual Studio Code Extensions
-		https://youtu.be/fnPhJHN0jTE?t=1294
 
 
 	
