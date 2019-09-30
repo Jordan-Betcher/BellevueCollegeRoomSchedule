@@ -8,7 +8,7 @@ Create
 		This site's purpose is to allow students to get a feel for room availablity. When I was a student I wanted to know which rooms I could sit in an ~play~ study as I wanted for my next class in 3 hours... I didn't have something that told me if a room is available, but that doesn't mean you can't.
 	Instructions
 		Fill in the room code (i.e. L219) and select the day, to view the classes that are in that room for that day.
-	Warning
+	Note
 		This site uses the bellevue college's API, misses some class times. This site's api downloads the class times at the start of the quarter so changes after the quarter has been released won't show up.
 	Google like calendar
 		Time
@@ -16,8 +16,24 @@ Create
 		Class and color
 		Convert from military to normal time (1300 -> 1PM)
 	Works on Mobile / small windows
+	Calendar
+		Background for Calendar
+		Convert from military to normal time
+	Form
+		Background for form
+		Make form look nice
+		Have the Note popup from an ! icon
+	Navigation Add pages
+	
 
 Create Requires
+	Refactor Javascript to another file
+		https://stackoverflow.com/questions/3809862/can-we-call-the-function-written-in-one-javascript-in-another-js-file/3811763
+		In the html have the javascript file that calls the other one loaded after the other one.
+		
+		
+	
+	
 
 TODO later
 	Pages
