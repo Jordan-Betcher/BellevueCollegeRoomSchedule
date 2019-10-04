@@ -50,6 +50,7 @@ async function main()
         let day = dayParam.split("=")[1];
         document.forms["searchForm"]["day"].value = day;
 
+        console.log(day + " dr " + room);
         if(room != undefined && day != undefined)
         {
             search();
@@ -58,5 +59,21 @@ async function main()
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
+
+    document.querySelector("select").addEventListener("keypress", function(event) 
+    {
+        event.preventDefault();
+    });
+
+    addEventListener("keyup", function(event) 
+    {
+        if (event.keyCode === 13) 
+        {
+            event.preventDefault();
+            document.getElementById("submitButton").click();
+        }
+    });
+
     main();
 })
+

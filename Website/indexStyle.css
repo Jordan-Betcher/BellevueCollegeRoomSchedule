@@ -41,12 +41,6 @@ form
     padding: .7em;
 }
 
-#divError
-{
-    color: red;
-    text-align: center;
-}
-
 #searchBar
 {
     margin: auto;
@@ -68,6 +62,17 @@ form
 #searchBar input
 {
     background-color: #F2F2F2;
+}
+
+#divError
+{
+    color: red;
+    text-align: center;
+}
+
+#note
+{
+    text-align: center;
 }
 
 #calendar
@@ -137,4 +142,24 @@ form
     border-radius: 10px;
     width: 250px;
     margin-left: 15px;
+}
+
+.text
+{
+    text-align: center;
+    margin: auto;
+    display: block;
+    width: 350px;
+}
+
+@media (max-width: 506px)
+{
+    #searchBar,
+    #searchBar span,
+    #searchBar select,
+    #searchBar input,
+    #searchBar button
+    {
+        font-size: 16px;
+    }
 }

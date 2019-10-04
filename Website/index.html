@@ -23,7 +23,7 @@
 
     <form name="searchForm" action="" method="get">
         <div id="searchBar">
-            <span id="divDay">
+            <span id="divDay" title="Select the Day you would like to search the room on.">
                 Day:
                 <select name="day">
                     <option value="Monday">Monday</option>
@@ -34,345 +34,41 @@
                 </select>
             </span>
 
-            <span id="divRoom">
+            <span id="divRoom" title='Type in the Room that you would like to search. Such as "L219" This is found right outside the door of the room.'>
                 Room:
-                <input type="text" name="room" size="1" maxlength="4" placeholder="L219">
+                <input type="text" name="room" size="1" maxlength="4">
             </span>
 
             <span>
-                <button type="submit" onclick="search()" value="search">Search</button>
+                <button id="submitButton" type="submit" onclick="searchButton()" value="search" title="Search...">Search</button>
             </span>
         </div>
     </form>
-    
 
     <div id="divError">
+    </div>
 
+    <div id="note">
     </div>
         
     <div id="calendar">
-        <!--
-        <div class="quarterDay">
-            <div class="row">
-                <span class="hour">7AM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">8AM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">9AM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">10AM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">11AM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">12AM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-        </div>
-
-        <div class="quarterDay">
-            <div class="row">
-                <span class="hour">1PM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">2PM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">3PM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">4PM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">5PM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">6PM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-        </div>
-
-        <div class="quarterDay">
-            <div class="row">
-                <span class="hour">7PM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">8PM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">9PM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">10PM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">11PM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">12PM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-        </div>
-
-        <div class="quarterDay">
-            <div class="row">
-                <span class="hour">1AM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">2AM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">3AM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">4AM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">5AM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-
-            <div class="row">
-                <span class="hour">6AM</span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-            <div class="row">
-                <span class="hour"></span>
-                <span class="hourLine">
-                    <span class="classCode"></span>
-                </span>
-            </div>
-        </div>
-
-    -->
     </div>
+
+    <br>
+
+    <span class="text">
+        Bellevue College's API that this app draws information from does not have all the classes. 
+        <br> ... 
+        <br> And none of the Events 
+        <br> ... 
+        <br> So a room may be occupied even if there is no classes shown at the time
+        <br> :(
+    </span>
+
+    <br>
+
+    <span class="text">
+        Tip: You can copy the url to share the search :D
+    </span>
 </body>
 </html>

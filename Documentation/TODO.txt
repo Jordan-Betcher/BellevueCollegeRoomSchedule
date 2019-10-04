@@ -21,13 +21,25 @@ Create
 		Background for Calendar
 		Convert from military to normal time
 	Form
-[]		Background for form
-[]		Make form look nice
+[x]		Background for form
+[x]		Make form look nice
 []		Have the Instructions popup from an ? icon
 			Fill in the room code (i.e. L219) and select the day, to view the classes that are in that room for that day.
 []		Have the Note popup from an ! icon
 			This site uses the bellevue college's API, misses some class times. This site's api downloads the class times at the start of the quarter so changes after the quarter has been released won't show up.
-[]	Navigation Add pages
+[?]	Navigation Add pages
+
+Feedback
+[x]	Loading Note
+[x]	Pressing Enter searches
+		Added Enter searches
+		Surpress Enter opening options on the "select" element
+[x]	ToolTips for Day
+[x]	ToolTips for Room
+[x]	If there is no classes found it says that right under where error would be
+[x]	[Bug] Duplicating Calendar
+[x]	On go to url check for parameters
+[]	[Bug] After 
 	
 
 Create Requires

@@ -1,6 +1,7 @@
 function search()
 {
-    event.preventDefault();
+    let calendar = document.getElementById("calendar");
+    calendar.innerHTML = "";
 
     let room = document.forms["searchForm"]["room"].value.toUpperCase();
     let day = document.forms["searchForm"]["day"].value;
@@ -24,8 +25,9 @@ function search()
     api += `&RoomNumber=${roomNumber}`;
     api += `&Day=${day}`;
 
+    let note = document.getElementById("note");
+    note.innerHTML = "searching api";
 
-    console.log("fetching");
     console.log(api);
     fetch(api)
         .then
@@ -43,13 +45,15 @@ function search()
             }
         )
     console.log("done fetching");
+    note.innerHTML = "";
 
     changeURL(room, day);
 }
 
+//Military Time to make the if statements easier
 const increments = 30;
 const minTime = 700;
-const maxTime = 2400;
+const maxTime = 2200;
 
 function createClasstimeTable(classTimeJSON)
 {
@@ -61,7 +65,6 @@ function createClasstimeTable(classTimeJSON)
     )
 
     let calendar = document.getElementById("calendar");
-
     let newCalendar = "";
     newCalendar = `<div class="quarterDay">`;
 
@@ -122,9 +125,16 @@ function createClasstimeTable(classTimeJSON)
             time += 100;
         }
     }
-
     newCalendar += `</div>`;
-    calendar.innerHTML += newCalendar;
+
+    if(classTimes.length == 0)
+    {
+        let divError = document.getElementById("note");
+        divError.innerText = "No Classes Found";
+    }
+
+
+    calendar.innerHTML = newCalendar;
 }
 
 function convertTimeMilitaryToNormalHour(militaryTime)
@@ -144,7 +154,17 @@ function convertTimeMilitaryToNormalHour(militaryTime)
         hour += timeAsString[0];
         hour += timeAsString[1];
         
-        if(hour > 12)
+        
+        if(hour == 12)
+        {
+            ampm = "PM";
+        }
+        else if(hour == 24)
+        {
+            hour = 12;
+            ampm = "AM";
+        }
+        else if(hour > 12)
         {
             hour -= 12;
             ampm = "PM";
@@ -159,5 +179,12 @@ function convertTimeMilitaryToNormalHour(militaryTime)
         Console.Log("Error: Time is not 3 or 4 in length! Cannot convert from Military Time (1400) to Normal Time (2:00 PM)");
     }
 
-    return hour + "AM";
+    return hour + ampm;
+}
+
+function searchButton()
+{
+    //Need to do this when using the button or else it messes up
+    event.preventDefault();
+    search();
 }
