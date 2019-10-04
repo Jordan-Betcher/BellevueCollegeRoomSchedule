@@ -18,14 +18,6 @@
         About
     </nav>
 
-    <br>
-
-    <div class="heading">Purpose</div>
-    <p>
-        This site's purpose is to allow students to get a feel for room availablity. When I was a student I wanted to know which rooms I could sit in an ~play~ study as I wanted for my next class in 3 hours... I didn't have something that told me if a room is available, but that doesn't mean you can't.
-    </p>
-    <br>
-
     <div class="heading">Instructions</div>
     <p>
         Fill in the room code (i.e. L219) and select the day, to view the classes that are in that room for that day.
@@ -45,7 +37,7 @@
     <form name="searchForm" action="" method="get">
         <div id="searchBar">
             <span id="divDay">
-                Day
+                Day:
                 <select name="day">
                     <option value="Monday">Monday</option>
                     <option value="Tuesday">Tuesday</option>
@@ -56,11 +48,13 @@
             </span>
 
             <span id="divRoom">
-                Room
-                <input type="text" name="room" size="1" maxlength="4">
+                Room:
+                <input type="text" name="room" size="1" maxlength="4" placeholder="L219">
             </span>
 
-            <button type="submit" onclick="search()" value="search">Search</button>
+            <span>
+                <button type="submit" onclick="search()" value="search">Search</button>
+            </span>
         </div>
     </form>
         

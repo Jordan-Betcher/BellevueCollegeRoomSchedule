@@ -66,19 +66,35 @@ function createClasstimeTable(classTimeJSON)
     newCalendar = `<div class="quarterDay">`;
 
     let time = minTime;
-    while ( time < maxTime) 
+    while ( time <= maxTime) 
     {
         let classTime = classTimes.find(function(element) { 
             return time >= element["startTime"] && time <= element["endTime"]; 
           });
         
+        let normalTime = convertTimeMilitaryToNormalHour(time);
+
+        if(time % 100 == 0)
+        {
+            newCalendar += 
+            `
+            <div class="row">
+                <span class="hour">${normalTime}</span>
+            `
+        }
+        else
+        {
+            newCalendar += 
+            `
+            <div class="row">
+                <span class="hour"></span>
+            `
+        }
 
         if(classTime == undefined)
         {
             newCalendar += 
             `
-            <div class="row">
-                <span class="hour">${time}</span>
                 <span class="hourLine">
                     <span class="classCode"></span>
                 </span>
@@ -90,10 +106,10 @@ function createClasstimeTable(classTimeJSON)
             let classCode = classTime["classCode"];
             newCalendar += 
             `
-            <div class="row">
-                <span class="hour">${time}</span>
                 <span class="hourLine">
-                    <span class="classCode">${classCode}</span>
+                    <a href="https://www2.bellevuecollege.edu/classes/Search?searchterm=${classCode}&submit=Search+classes" target="_blank">
+                        <span class="classCode filled">${classCode}</span>
+                    </a>
                 </span>
             </div>
             `
@@ -109,4 +125,39 @@ function createClasstimeTable(classTimeJSON)
 
     newCalendar += `</div>`;
     calendar.innerHTML += newCalendar;
+}
+
+function convertTimeMilitaryToNormalHour(militaryTime)
+{
+    let timeAsString = "" + militaryTime;
+    let hour;
+    let ampm = "";
+
+    if(timeAsString.length == 3)
+    {
+        hour = timeAsString[0];
+        ampm = "AM";
+    }
+    else if(timeAsString.length == 4)
+    {
+        hour  = "";
+        hour += timeAsString[0];
+        hour += timeAsString[1];
+        
+        if(hour > 12)
+        {
+            hour -= 12;
+            ampm = "PM";
+        }
+        else
+        {
+            ampm = "AM";
+        }
+    }
+    else
+    {
+        Console.Log("Error: Time is not 3 or 4 in length! Cannot convert from Military Time (1400) to Normal Time (2:00 PM)");
+    }
+
+    return hour + "AM";
 }
