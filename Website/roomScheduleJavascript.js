@@ -56,6 +56,10 @@ async function main()
             search();
         }
     }
+    else
+    {
+        document.getElementById("roomText").focus();
+    }
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {

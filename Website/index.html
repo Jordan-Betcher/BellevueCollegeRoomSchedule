@@ -1,74 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="indexStyle.css">
-    <script src="calendar.js"></script>
-    <script src="roomScheduleJavascript.js"></script>
-    <title>Bellevue College Room Schedule</title>
-</head>
-<body>
-    <h1 class="title">
-        Bellevue College Room Schedule
-    </h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="indexStyle.css">
+        <script src="calendar.js"></script>
+        <script src="roomScheduleJavascript.js"></script>
+        <title>Bellevue College Room Schedule</title>
+    </head>
+    <body>
+        <h1 class="title">
+            Bellevue College Room Schedule
+        </h1>
 
-    <!--
-    <nav>
-        Home
-        About
-    </nav>
-    -->
+        <form name="searchForm" action="" method="get">
+            <div id="searchBar">
 
-    <form name="searchForm" action="" method="get">
-        <div id="searchBar">
-            <span id="divDay" title="Select the Day you would like to search the room on.">
-                Day:
-                <select name="day">
-                    <option value="Monday">Monday</option>
-                    <option value="Tuesday">Tuesday</option>
-                    <option value="Wednesday">Wednesday</option>
-                    <option value="Thursday">Thursday</option>
-                    <option value="Friday">Friday</option>
-                </select>
-            </span>
+                <span id="divRoom" title='Type in the Room that you would like to search. Such as "L219" This is found right outside the door of the room.'>
+                    Room:
+                    <input id="roomText" type="text" name="room" size="1" maxlength="4">
+                </span>
 
-            <span id="divRoom" title='Type in the Room that you would like to search. Such as "L219" This is found right outside the door of the room.'>
-                Room:
-                <input type="text" name="room" size="1" maxlength="4">
-            </span>
+                <span id="divDay" title="Select the Day you would like to search the room on.">
+                    Day:
+                    <select name="day">
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                    </select>
+                </span>
 
-            <span>
-                <button id="submitButton" type="submit" onclick="searchButton()" value="search" title="Search...">Search</button>
-            </span>
+                <span>
+                    <button id="submitButton" type="submit" onclick="searchButton()" value="search" title="Search...">Search</button>
+                </span>
+            </div>
+        </form>
+
+        <div id="divError">
         </div>
-    </form>
 
-    <div id="divError">
-    </div>
+        <div id="note">
+        </div>
+            
+        <div id="calendar">
+        </div>
 
-    <div id="note">
-    </div>
+        <footer>
         
-    <div id="calendar">
-    </div>
+            <br>
+    
+            <span class="text">
+                The calendar draws from Bellevue College's own api. Be aware that this api does not provide all the classes and has no access to any events or meetings that are scheduled.
+            </span>
+    
+            <br>
+    
+            <br>
+            <div class="foot">
+                Contact: jordan.betcher@bellevuecollege.edu <br> Last Modified: 10/7/2019
+            </div> 
+        </footer>
 
-    <br>
-
-    <span class="text">
-        Bellevue College's API that this app draws information from does not have all the classes. 
-        <br> ... 
-        <br> And none of the Events 
-        <br> ... 
-        <br> So a room may be occupied even if there is no classes shown at the time
-        <br> :(
-    </span>
-
-    <br>
-
-    <span class="text">
-        Tip: You can copy the url to share the search :D
-    </span>
-</body>
+        
+    </body>
 </html>
