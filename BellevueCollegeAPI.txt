@@ -6,9 +6,9 @@ x		x              x       x            x         x
 
 
 API (https://www2.bellevuecollege.edu/data/)
-1. current quarter: api/v1/quarter/current
-2. subjects in quarter: api/v1/subjects/{YearQuarterID}
-3. classes in subject in quarter: api/v1/classes/{YearQuarterID}/{Subject}
+1. current quarter: https://www2.bellevuecollege.edu/data/api/v1/quarter/current
+2. subjects in quarter: https://www2.bellevuecollege.edu/data/api/v1/subjects/{YearQuarterID}
+3. classes in subject in quarter: https://www2.bellevuecollege.edu/data/api/v1/classes/{YearQuarterID}/{Subject}
 
 Code
 1. Loop through the classes and take the room and times and create timesheet for each room

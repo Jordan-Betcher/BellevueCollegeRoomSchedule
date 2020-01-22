@@ -3,6 +3,9 @@ Bellevue College Room Finder
 Room Schedule Website
 http://bellevuecollegeroomschedule.s3-website-us-west-2.amazonaws.com/
 
+Room Schedule API
+https://67gi99ndv2.execute-api.us-west-2.amazonaws.com/Publish/room?BuildingLetter=L&RoomNumber=219&Day=Monday
+
 Create
 	Purpose
 		This site's purpose is to allow students to get a feel for room availablity. When I was a student I wanted to know which rooms I could sit in an ~play~ study as I wanted for my next class in 3 hours... I didn't have something that told me if a room is available, but that doesn't mean you can't.
@@ -23,7 +26,7 @@ Create
 	Form
 [x]		Background for form
 [x]		Make form look nice
-[]		Have the Instructions popup from highlighting the form inputs
+[x]		Have the Instructions popup from highlighting the form inputs
 			Fill in the room code (i.e. L219) and select the day, to view the classes that are in that room for that day.
 []		Have the Note popup from an ! icon
 			This site uses the bellevue college's API, misses some class times. This site's api downloads the class times at the start of the quarter so changes after the quarter has been released won't show up.
@@ -40,7 +43,7 @@ Feedback
 [x]	[Bug] Duplicating Calendar
 [x]	On go to url check for parameters
 [x]	Focus on Room Textbox on load if it doesn't have a url
-[]	Create a footer with my name, email, and date of website creation
+[x]	Create a footer with my name, email, and date of website creation
 
 	
 

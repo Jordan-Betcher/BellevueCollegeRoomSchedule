@@ -1,0 +1,3 @@
+Messed around with it a bit, and I couldn't figure out a way to break it, and all of the edge cases I could think of were accounted for. When an hour has a class in it it does appear the lines don't quite line up, but it's only when there's a class in that hour - later in the same schedule, where there are no classes, the lines line up just fine. I also couldn't find a classroom so stuffed with classes that I couldn't tell what was the hour line and what was the half hour line.
+
+My guess is it has something to do with the CSS file - possibly the ".classCode" and the ".filled", where .filled is a little too short? Just a guess there, though.
